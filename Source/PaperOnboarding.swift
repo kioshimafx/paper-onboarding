@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias OnboardingItemInfo = (imageName: String, title: String, description: String, iconName: String, color: UIColor, titleColor: UIColor, descriptionColor: UIColor, titleFont: UIFont, descriptionFont: UIFont)
+public typealias OnboardingItemInfo = (imageName: UIImage, title: String, description: String, iconName: UIImage, color: UIColor, titleColor: UIColor, descriptionColor: UIColor, titleFont: UIFont, descriptionFont: UIFont)
 
 /**
  *  The PaperOnboardingDataSource protocol is adopted by an object that mediates the application’s data model for a PaperOnboarding object.
@@ -167,7 +167,7 @@ extension PaperOnboarding {
                                            selectedRadius: pageViewSelectedRadius)
     pageView.configuration = { item, index in
       if let iconName = self.itemsInfo?[index].iconName {
-        item.imageView?.image = UIImage(named: iconName)
+        item.imageView?.image = iconName
       }
     }
     return pageView
